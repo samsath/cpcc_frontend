@@ -1,0 +1,15 @@
+.app-logo{
+  width:64px;
+  height:64px;
+  position: absolute;
+  display:inline-block;
+}
+
+.logo-item{
+  background-image: url('/assets/logo.svg');
+  background-size:contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height:100%;
+  width:100%;
+}
