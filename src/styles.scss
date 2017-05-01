@@ -1,5 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900&subset=latin-ext,tamil');
-@import "./app/shared/variables";
+@import "sass/variables";
 @import "./app/mainheader/mainheader.component";
 @import "./app/app.component";
+@import "./sass/cards";
+
+.main-logo{
+  background-image: url('assets/images/logo.svg');
+  background-size:contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height:100%;
+  width:100%;
+}

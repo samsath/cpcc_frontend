@@ -1,0 +1,39 @@
+.card.session-card{
+  .card-action{
+    a:not(.btn):not(.btn-large):not(.btn-floating) {
+      background: $main;
+      padding: 5px 7px;
+      color: $background;
+
+      transition: background 1s, color 1s;
+      transition-timing-function: ease-in-out;
+
+      &:hover {
+        background: $background;
+        color: $main;
+        border: 1px solid $main;
+
+      }
+    }
+
+
+
+  }
+
+  .card-content{
+
+    .date{
+      color:$main;
+      font-size:2rem;
+      font-weight:bold;
+    }
+
+    p{
+
+    }
+
+    .card-title{
+
+    }
+  }
+}

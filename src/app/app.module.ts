@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 
 // thirdparty
 import { MaterializeModule } from "angular2-materialize";
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 // services
 import { TidelevelDataService } from './shared/tidelevel-data.service';
@@ -14,19 +15,26 @@ import { TidelevelDataService } from './shared/tidelevel-data.service';
 import { AppComponent } from './app.component';
 import { MainheaderComponent } from './mainheader/mainheader.component';
 import { LogoComponent } from './mainheader/logo/logo.component';
+import { MainimageComponent } from './mainimage/mainimage.component';
+import { ContentAreaComponent } from './content-area/content-area.component';
+import { NextSessionComponent } from './next-session/next-session.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MainheaderComponent,
-    LogoComponent
+    LogoComponent,
+    MainimageComponent,
+    ContentAreaComponent,
+    NextSessionComponent
   ],
   imports: [
     MaterializeModule,
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    LazyLoadImageModule
   ],
   providers: [
     TidelevelDataService
