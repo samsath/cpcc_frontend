@@ -3,13 +3,13 @@ import { Tidelevel } from './tidelevel';
 
 @Injectable()
 export class TidelevelDataService {
-  lastId: number = 0;
+  lastId: 0;
   tidelevels: Tidelevel[] = [];
 
   constructor() { }
 
   addTideLevel(tidelevel: Tidelevel): TidelevelDataService {
-    if ( !tidelevel.id ){
+    if ( !tidelevel.id ) {
       tidelevel.id = ++this.lastId;
 
     }
@@ -29,13 +29,13 @@ export class TidelevelDataService {
 
   getTideLevelById(id: number): Tidelevel {
     return this.tidelevels
-      .filter(tidelevels => tidelevels.id == id)
-      .pop()
+      .filter(tidelevels => tidelevels.id === id)
+      .pop();
   }
 
   updateTideLevel(id: number, value: Object = {}): Tidelevel {
     const tide = this.getTideLevelById(id);
-    if ( !tide ){
+    if ( !tide ) {
       return null;
     }
     Object.assign(tide, value);

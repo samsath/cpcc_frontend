@@ -2,12 +2,12 @@ export class NextSession {
   date: string;
   content: string;
   club: boolean;
-  membersonly:boolean = false;
+  membersonly: false;
   temp: string;
   weather: number;
   tide: string;
 
-  constructor( values: Object ={}){
+  constructor( values: Object = {}) {
     Object.assign(this, values);
   }
 }

@@ -9,7 +9,7 @@ describe('NextSession', () => {
         date: '12 March 2016',
         content: 'All is welcome to the club',
         club: true,
-        temp: "20 degress",
+        temp: '20 degress',
         weather: 3,
         tide: '343433'
       });

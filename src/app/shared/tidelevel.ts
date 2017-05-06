@@ -3,7 +3,7 @@ export class Tidelevel {
   level: number;
   percentage: number;
 
-  constructor(values: Object = {}) {
-    Object.assign(this,values);
+  constructor( values: Object = {}) {
+    Object.assign(this, values);
   }
 }

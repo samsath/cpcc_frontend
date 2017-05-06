@@ -6,7 +6,7 @@ import { environment } from '../environment';
 
 @Injectable()
 export class NextSessionService {
-  private url: string = '';
+  private url: '';
   session: NextSession;
 
   updateSession(): NextSessionService {
@@ -15,26 +15,27 @@ export class NextSessionService {
   }
 
   getSession(): NextSession {
-    if( !this.session ){
+    if ( !this.session ) {
       this.updateSession();
     }
     return this.session;
   }
 
-  private getHeaders(){
-    let headers = new Headers();
+  private getHeaders() {
+    const headers = new Headers();
     headers.append('Accept', 'application/json');
     return headers;
   }
 
-  getRequest(): Observable<NextSession>{
-    let session = this.http;
+  /*
+  getRequest(): Observable<NextSession> {
+    const session = this.http;
 
     return session;
   }
+  */
 
 
-
-  constructor(private http : Http) { }
+  constructor(private http: Http) { }
 
 }
