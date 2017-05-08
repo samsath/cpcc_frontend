@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule, Routes } from '@angular/router';
 
 // thirdparty
 import { MaterializeModule } from 'angular2-materialize';
@@ -18,7 +19,23 @@ import { LogoComponent } from './mainheader/logo/logo.component';
 import { MainimageComponent } from './mainimage/mainimage.component';
 import { ContentAreaComponent } from './content-area/content-area.component';
 import { NextSessionComponent } from './next-session/next-session.component';
+import { SafeHtmlPipe } from './safe-html.pipe';
+import { AboutpageComponent } from './aboutpage/aboutpage.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { ArticleslistComponent } from './articles/articleslist/articleslist.component';
+import { ArticlesdetailComponent } from './articles/articlesdetail/articlesdetail.component';
+import { EnquiryComponent } from './enquiry/enquiry.component';
+import { SquareItemComponent } from './square-item/square-item.component';
 
+
+const appRoutes: Routes = [
+  { path:'', component:HomepageComponent },
+  { path:'about', component:AboutpageComponent},
+  { path:'enquiry', component:EnquiryComponent },
+  { path:'article', component:ArticleslistComponent},
+  { path:'article/:slug', component:ArticlesdetailComponent},
+
+];
 
 @NgModule({
   declarations: [
@@ -27,9 +44,17 @@ import { NextSessionComponent } from './next-session/next-session.component';
     LogoComponent,
     MainimageComponent,
     ContentAreaComponent,
-    NextSessionComponent
+    NextSessionComponent,
+    SafeHtmlPipe,
+    AboutpageComponent,
+    HomepageComponent,
+    ArticleslistComponent,
+    ArticlesdetailComponent,
+    EnquiryComponent,
+    SquareItemComponent
   ],
   imports: [
+    RouterModule.forRoot(appRoutes),
     MaterializeModule,
     BrowserModule,
     FormsModule,

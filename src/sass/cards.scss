@@ -37,3 +37,35 @@
     }
   }
 }
+
+app-content-area{
+  .boxarea-action {
+    position: relative;
+    float: right;
+    display: inline-block;
+
+    a:not(.btn):not(.btn-large):not(.btn-floating) {
+      background: $main;
+      padding: 5px 7px;
+      color: $background;
+
+      transition: background 1s, color 1s;
+      transition-timing-function: ease-in-out;
+
+      &:hover {
+        background: $background;
+        color: $main;
+        border: 1px solid $main;
+
+      }
+    }
+  }
+}
+
+.card-panel {
+  border: 1px solid $main;
+
+  h1 {
+    margin-top: 0px;
+  }
+}
