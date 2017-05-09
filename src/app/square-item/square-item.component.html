@@ -1,13 +1,13 @@
 <div class="card session-card">
   <div class="card-image">
-    <img src="">
+    <img class="imageelement" [defaultImage]="defaultImage" [lazyLoad]="article.main_image" [offset]="offset"/>
   </div>
   <div class="card-content">
-    <span class="card-title"></span>
-    <p class="date"></p>
-    <p class="brief"></p>
+    <span class="card-title">{{ article.title }}</span>
+    <p class="date small">{{ article.post_date }}</p>
+    <p class="brief">{{ article.list_description }}</p>
   </div>
   <div class="card-action">
-    <a href="#">Read more</a>
+    <a routerLink='/article/{{ article.slug }}' >Read more</a>
   </div>
 </div>
