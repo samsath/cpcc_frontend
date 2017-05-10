@@ -28,6 +28,7 @@ import { EnquiryComponent } from './enquiry/enquiry.component';
 import { SquareItemComponent } from './square-item/square-item.component';
 import { FaqpageComponent } from './faqpage/faqpage.component';
 import { OrderbyPipe } from './orderby.pipe';
+import { SessionComponent } from './session/session.component';
 
 
 const appRoutes: Routes = [
@@ -37,6 +38,7 @@ const appRoutes: Routes = [
   { path:'faq', component:FaqpageComponent },
   { path:'article', component:ArticleslistComponent},
   { path:'article/:slug', component:ArticlesdetailComponent},
+  { path:'session', component:SessionComponent},
 
 ];
 
@@ -56,7 +58,8 @@ const appRoutes: Routes = [
     EnquiryComponent,
     SquareItemComponent,
     FaqpageComponent,
-    OrderbyPipe
+    OrderbyPipe,
+    SessionComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
