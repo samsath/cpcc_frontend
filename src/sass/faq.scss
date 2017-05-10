@@ -1,0 +1,13 @@
+
+.collapsible-header{
+  border: 2px solid $main;
+  color:$main;
+
+  transition: all 1s, color 0.5s;
+  transition-timing-function: ease-in-out;
+
+  &.active{
+    background-color: $main;
+    color:$background;
+  }
+}

@@ -26,12 +26,15 @@ import { ArticleslistComponent } from './articles/articleslist/articleslist.comp
 import { ArticlesdetailComponent } from './articles/articlesdetail/articlesdetail.component';
 import { EnquiryComponent } from './enquiry/enquiry.component';
 import { SquareItemComponent } from './square-item/square-item.component';
+import { FaqpageComponent } from './faqpage/faqpage.component';
+import { OrderbyPipe } from './orderby.pipe';
 
 
 const appRoutes: Routes = [
   { path:'', component:HomepageComponent },
   { path:'about', component:AboutpageComponent},
   { path:'enquiry', component:EnquiryComponent },
+  { path:'faq', component:FaqpageComponent },
   { path:'article', component:ArticleslistComponent},
   { path:'article/:slug', component:ArticlesdetailComponent},
 
@@ -51,7 +54,9 @@ const appRoutes: Routes = [
     ArticleslistComponent,
     ArticlesdetailComponent,
     EnquiryComponent,
-    SquareItemComponent
+    SquareItemComponent,
+    FaqpageComponent,
+    OrderbyPipe
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
