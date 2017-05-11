@@ -16,7 +16,8 @@ export class SessionComponent implements OnInit {
     return [
       {"id":1,"content":"saasdasd","title":"one"},
       {"id":2,"content":"saasdasd","title":"two"},
-      {"id":3,"content":"saasdasd","title":"three"},
+      {"id":3,"content":"saasdasd","title":"two"},
+      {"id":4,"content":"saasdasd","title":"two"},
     ]
   }
 

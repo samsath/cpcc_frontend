@@ -8,8 +8,8 @@
         <p></p>
         <ul materialize="collapsible" class="collapsible popout" data-collapsible="accordion">
           <li *ngFor="let faq of faqs">
-            <div class="collapsible-header">{{ faq.question }}</div>
-            <div class="collapsible-body">{{ faq.answer }}</div>
+            <div class="collapsible-header"><h1 class="icon q">Q</h1>{{ faq.question }}</div>
+            <div class="collapsible-body"><h1 class="icon a">A</h1><p>{{ faq.answer }}</p></div>
           </li>
         </ul>
       </div>

@@ -29,6 +29,7 @@ import { SquareItemComponent } from './square-item/square-item.component';
 import { FaqpageComponent } from './faqpage/faqpage.component';
 import { OrderbyPipe } from './orderby.pipe';
 import { SessionComponent } from './session/session.component';
+import { NewsletterComponent } from './newsletter/newsletterlist/newsletter.component';
 
 
 const appRoutes: Routes = [
@@ -39,6 +40,7 @@ const appRoutes: Routes = [
   { path:'article', component:ArticleslistComponent},
   { path:'article/:slug', component:ArticlesdetailComponent},
   { path:'session', component:SessionComponent},
+  { path: 'newsletter', component:NewsletterComponent },
 
 ];
 
@@ -59,7 +61,8 @@ const appRoutes: Routes = [
     SquareItemComponent,
     FaqpageComponent,
     OrderbyPipe,
-    SessionComponent
+    SessionComponent,
+    NewsletterComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
