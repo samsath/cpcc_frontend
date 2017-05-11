@@ -30,6 +30,7 @@ import { FaqpageComponent } from './faqpage/faqpage.component';
 import { OrderbyPipe } from './orderby.pipe';
 import { SessionComponent } from './session/session.component';
 import { NewsletterComponent } from './newsletter/newsletterlist/newsletter.component';
+import { NewsletterdetaiComponent } from './newsletter/newsletterdetai/newsletterdetai.component';
 
 
 const appRoutes: Routes = [
@@ -62,7 +63,8 @@ const appRoutes: Routes = [
     FaqpageComponent,
     OrderbyPipe,
     SessionComponent,
-    NewsletterComponent
+    NewsletterComponent,
+    NewsletterdetaiComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
