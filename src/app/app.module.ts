@@ -31,6 +31,8 @@ import { OrderbyPipe } from './orderby.pipe';
 import { SessionComponent } from './session/session.component';
 import { NewsletterComponent } from './newsletter/newsletterlist/newsletter.component';
 import { NewsletterdetailComponent } from './newsletter/newsletterdetail/newsletterdetail.component';
+import { TriplistComponent } from './trips/triplist/triplist.component';
+import { TripdetailComponent } from './trips/tripdetail/tripdetail.component';
 
 
 const appRoutes: Routes = [
@@ -65,7 +67,9 @@ const appRoutes: Routes = [
     OrderbyPipe,
     SessionComponent,
     NewsletterComponent,
-    NewsletterdetailComponent
+    NewsletterdetailComponent,
+    TriplistComponent,
+    TripdetailComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
