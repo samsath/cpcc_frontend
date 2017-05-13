@@ -30,7 +30,7 @@ import { FaqpageComponent } from './faqpage/faqpage.component';
 import { OrderbyPipe } from './orderby.pipe';
 import { SessionComponent } from './session/session.component';
 import { NewsletterComponent } from './newsletter/newsletterlist/newsletter.component';
-import { NewsletterdetaiComponent } from './newsletter/newsletterdetai/newsletterdetai.component';
+import { NewsletterdetailComponent } from './newsletter/newsletterdetail/newsletterdetail.component';
 
 
 const appRoutes: Routes = [
@@ -42,6 +42,7 @@ const appRoutes: Routes = [
   { path:'article/:slug', component:ArticlesdetailComponent},
   { path:'session', component:SessionComponent},
   { path: 'newsletter', component:NewsletterComponent },
+  { path: 'newsletter/:slug', component:NewsletterdetailComponent },
 
 ];
 
@@ -64,7 +65,7 @@ const appRoutes: Routes = [
     OrderbyPipe,
     SessionComponent,
     NewsletterComponent,
-    NewsletterdetaiComponent
+    NewsletterdetailComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

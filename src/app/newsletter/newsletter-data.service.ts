@@ -26,9 +26,10 @@ export class NewsletterDataService {
   }
 
   getNewsltterBySlug(slug: string): Newsletter {
-    return this.newsletters
+    let news = this.newsletters
       .filter(newsletter => newsletter.slug === slug)
-      .pop()
+      .pop();
+    return news
   }
 
 }
