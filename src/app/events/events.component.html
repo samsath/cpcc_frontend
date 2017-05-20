@@ -1,0 +1,75 @@
+
+<div class="container">
+  <div class="row"></div>
+  <div class="row">
+
+    <div class="col s12 m12 l8">
+      <div class="card-panel">
+
+        <div class="row">
+          <div class="col s6">
+            <div class="btn-group">
+              <div
+                class="btn btn-primary"
+                mwlCalendarPreviousView
+                view="month"
+                [(viewDate)]="viewDate">
+                Previous
+              </div>
+              <div
+                class="btn btn-secondary"
+                mwlCalendarToday
+                [(viewDate)]="viewDate">
+                Today
+              </div>
+              <div
+                class="btn btn-primary"
+                mwlCalendarNextView
+                view="month"
+                [(viewDate)]="viewDate">
+                Next
+              </div>
+            </div>
+          </div>
+          <div class="col s6 text-right">
+            <h3>{{ viewDate | calendarDate:'monthViewTitle':'en' }}</h3>
+          </div>
+        </div>
+        <br>
+
+        <ng-template #customCellTemplate let-day="day" let-locale="locale">
+          <div class="cal-cell-tide">
+            <span class="cal-date">{{ day.date | calendarDate:'monthViewDayNumber':locale }}</span>
+            <span class="cal-weather">{{ day.dayWeather }}</span>
+            <div class="cal-chart">
+              <canvas baseChart style="width:100%;height:100%;"
+                      [datasets]="day.tideData"
+                      [options]="day.tideOptions"
+                      [colors]="day.tideColour"
+                      [chartType]="'line'"></canvas>
+            </div>
+
+            <div class="cal-actions">
+              <div class="chip">
+                <i class="material-icons">warning</i> Event
+              </div>
+            </div>
+
+
+          </div>
+        </ng-template>
+
+        <mwl-calendar-month-view
+          [viewDate]="viewDate"
+          [events]="events"
+          [cellTemplate]="customCellTemplate"
+          [dayModifier]="dayData"
+          (dayClicked)="dayClicked($event.day)">
+        </mwl-calendar-month-view>
+
+
+      </div>
+    </div>
+    <app-next-session></app-next-session>
+  </div>
+</div>

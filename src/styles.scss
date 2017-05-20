@@ -8,6 +8,7 @@
 @import "./sass/faq";
 @import "./sass/collection";
 @import "./sass/navbar";
+@import "./sass/calendar";
 
 .main-logo{
   background-image: url('assets/images/logo.svg');
@@ -40,4 +41,8 @@
 
 .leaflet-touch .leaflet-control-attribution, .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar{
   opacity: 0;
+}
+
+.text-right{
+  text-align:right;
 }
