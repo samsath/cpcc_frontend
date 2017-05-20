@@ -7,6 +7,7 @@
 @import "./sass/enquiry";
 @import "./sass/faq";
 @import "./sass/collection";
+@import "./sass/navbar";
 
 .main-logo{
   background-image: url('assets/images/logo.svg');
@@ -35,4 +36,8 @@
   .container {
     width: 90%;
   }
+}
+
+.leaflet-touch .leaflet-control-attribution, .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar{
+  opacity: 0;
 }

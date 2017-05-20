@@ -8,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 // thirdparty
 import { MaterializeModule } from 'angular2-materialize';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { LeafletModule } from '@asymmetrik/angular2-leaflet';
 
 // services
 import { TidelevelDataService } from './shared/tidelevel-data.service';
@@ -33,6 +34,7 @@ import { NewsletterComponent } from './newsletter/newsletterlist/newsletter.comp
 import { NewsletterdetailComponent } from './newsletter/newsletterdetail/newsletterdetail.component';
 import { TriplistComponent } from './trips/triplist/triplist.component';
 import { TripdetailComponent } from './trips/tripdetail/tripdetail.component';
+import { MaplistItemComponent } from './maplist-item/maplist-item.component';
 
 
 const appRoutes: Routes = [
@@ -45,6 +47,8 @@ const appRoutes: Routes = [
   { path:'session', component:SessionComponent},
   { path: 'newsletter', component:NewsletterComponent },
   { path: 'newsletter/:slug', component:NewsletterdetailComponent },
+  { path: 'trips', component:TriplistComponent },
+  { path: 'trips/:slug', component:TripdetailComponent }
 
 ];
 
@@ -69,7 +73,8 @@ const appRoutes: Routes = [
     NewsletterComponent,
     NewsletterdetailComponent,
     TriplistComponent,
-    TripdetailComponent
+    TripdetailComponent,
+    MaplistItemComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -77,7 +82,8 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    LazyLoadImageModule
+    LazyLoadImageModule,
+    LeafletModule
   ],
   providers: [
     TidelevelDataService
