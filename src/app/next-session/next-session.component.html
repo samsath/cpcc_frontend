@@ -2,13 +2,12 @@
   <div class="card session-card">
     <div class="card-content">
       <span class="card-title">Next Session</span>
-      <p class="date">Sunday 12th March</p>
-      <p class="brief">All welcome to this event, will be at the club house on the thames.</p>
+      <p class="date">{{(session)?.date}}</p>
+      <p class="brief">{{(session)?.content}}</p>
     </div>
     <div class="card-action">
-      <a href="#">Find us</a>
-      <a href="#">FAQ</a>
-      <a href="#">Info</a>
+      <a href="/session">Find us</a>
+      <a href="/faq">FAQ</a>
     </div>
   </div>
 </div>

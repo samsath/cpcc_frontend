@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import { environment } from '../environment';
 
 @Component({
   selector: 'app-homepage',
@@ -7,11 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
   title = 'Chiswick Pier Canoe Club';
-  image = 'https://f58619eed67ecf47f9c5-69635130c45beb2524d5bafa9c042fe0.ssl.cf3.rackcdn.com/heroImages/_2000xAUTO_crop_center-center_70/Claire-Williams-nature-environment-wildlife.jpg';
+  homepage;
 
-  constructor() { }
+  constructor(private http: Http) { }
 
   ngOnInit() {
+    this.http.get(environment.API_ENDPOINT+'homepage')
+      .map((res: Response) => res.json()).subscribe((json: Object) =>{
+        this.homepage = json
+      });
+
+
+
   }
 
 }

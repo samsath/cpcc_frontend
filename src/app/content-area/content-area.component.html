@@ -1,6 +1,6 @@
 <div class="col " [ngClass]="{'s12 m12 l9':column == 1, 's12 m12 l6':column == 2, 's12 m12 l4':column >= 3}">
   <div class="card-panel">
-    <div class="boxarea-action">
+    <div class="boxarea-action" *ngIf="paginate">
       <a href="#">Previous</a>
       <a href="#">Next</a>
     </div>
@@ -8,10 +8,6 @@
       <h1>{{ title }}</h1>
     </div>
     <div class="boxarea-content" [innerHTML]="content | safeHtml">
-      <p>Based in a superb setting on the Thames at Chiswick Pier, Chiswick Pier Canoe Club was formed in 1999 and has around 80 members. It is a friendly club and new members are always welcome. The club has a good spread of ages with many adult members and youngsters. The minimum age is 8 subject to the prevailing water conditions.</p>
-      <p>Safety is of prime importance to us at Chiswick Pier Canoe Club and we will only take a safe number of people on any of our club session. The number of people (club member, guests) is subject to coach availability on the day. Should the number of people exceed our safe capacity then the surplus will be turned away on grounds of safety.</p>
-      <p>Below you will find some useful information relating to paddling on the Thames. To view our events and trips in calendar format please visit our Calendar </p>
-      <p>The calendar also shows activity on the Thames which may affect paddling enjoyment!</p>
 
     </div>
     <div class="box-area-action">

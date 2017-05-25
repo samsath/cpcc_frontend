@@ -23,6 +23,7 @@ import { LogoComponent } from './mainheader/logo/logo.component';
 import { MainimageComponent } from './mainimage/mainimage.component';
 import { ContentAreaComponent } from './content-area/content-area.component';
 import { NextSessionComponent } from './next-session/next-session.component';
+import { NextSessionService } from './next-session/next-session.service';
 import { SafeHtmlPipe } from './safe-html.pipe';
 import { AboutpageComponent } from './aboutpage/aboutpage.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -42,13 +43,13 @@ import { EventsComponent } from './events/events.component';
 
 
 const appRoutes: Routes = [
-  { path:'', component:HomepageComponent },
-  { path:'about', component:AboutpageComponent},
-  { path:'enquiry', component:EnquiryComponent },
-  { path:'faq', component:FaqpageComponent },
-  { path:'article', component:ArticleslistComponent},
-  { path:'article/:slug', component:ArticlesdetailComponent},
-  { path:'session', component:SessionComponent},
+  { path: '', component:HomepageComponent },
+  { path: 'about', component:AboutpageComponent},
+  { path: 'enquiry', component:EnquiryComponent },
+  { path: 'faq', component:FaqpageComponent },
+  { path: 'article', component:ArticleslistComponent},
+  { path: 'article/:slug', component:ArticlesdetailComponent},
+  { path: 'session', component:SessionComponent},
   { path: 'newsletter', component:NewsletterComponent },
   { path: 'newsletter/:slug', component:NewsletterdetailComponent },
   { path: 'trips', component:TriplistComponent },
@@ -94,7 +95,8 @@ const appRoutes: Routes = [
     ChartsModule
   ],
   providers: [
-    TidelevelDataService
+    TidelevelDataService,
+    NextSessionService
   ],
   bootstrap: [AppComponent]
 })

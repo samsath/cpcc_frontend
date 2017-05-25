@@ -16,6 +16,9 @@ export class ContentAreaComponent implements OnInit {
   @Input()
   content: string;
 
+  @Input()
+  paginate: boolean;
+
   constructor() { }
 
   ngOnInit() {

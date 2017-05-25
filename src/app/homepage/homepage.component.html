@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row height-spacer"></div>
   <div class="row">
-    <app-content-area [column]="1" [title]="title" [content]=""></app-content-area>
+
+    <app-content-area [column]="1" [title]="home.title" [content]="home.description" [paginate]="False" *ngFor="let home of homepage"></app-content-area>
     <app-next-session></app-next-session>
   </div>
 </div>
