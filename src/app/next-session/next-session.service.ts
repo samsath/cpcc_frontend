@@ -7,11 +7,10 @@ import { environment } from '../environment';
 @Injectable()
 export class NextSessionService {
   private url: '';
-  session: NextSession;
+  session;
 
-  updateSession(): NextSessionService {
-
-    return this;
+  updateSession() {
+    this.session = this.http.get(environment.API_ENDPOINT+'/nextsession').map(res => res.json())
   }
 
   getSession(): NextSession {

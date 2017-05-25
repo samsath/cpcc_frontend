@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NextSessionService } from './next-session.service';
 
 @Component({
   selector: 'app-next-session',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NextSessionComponent implements OnInit {
 
-  constructor() { }
+  session;
+
+  constructor(
+    private nextsessionService: NextSessionService
+  ) { }
 
   ngOnInit() {
+    this.session = this.nextsessionService.getSession();
+    console.log(this.session);
   }
+
 
 }
