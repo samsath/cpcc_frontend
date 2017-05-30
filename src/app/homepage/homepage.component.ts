@@ -10,13 +10,21 @@ import { environment } from '../environment';
 export class HomepageComponent implements OnInit {
   title = 'Chiswick Pier Canoe Club';
   homepage;
+  images:string;
+  defaultImage = 'https://www.placecage.com/1000/1000';
+  offset = 1000;
 
   constructor(private http: Http) { }
 
   ngOnInit() {
     this.http.get(environment.API_ENDPOINT+'homepage')
       .map((res: Response) => res.json()).subscribe((json: Object) =>{
-        this.homepage = json
+        if(json[0]['main_image']){
+          this.images = json[0]['main_image']['image'];
+          console.log(this.images);
+        }
+        this.homepage = json;
+
       });
 
 

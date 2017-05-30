@@ -1,3 +1,6 @@
+<div class="imagewrap">
+  <div class="imageelement" [ngStyle]="{'background-image': 'url(' + image?.file + ')'}" ></div>
+</div>
 <div class="container">
   <div class="row"></div>
   <div class="row">
@@ -9,7 +12,7 @@
         <ul materialize="collapsible" class="collapsible popout" data-collapsible="accordion">
           <li *ngFor="let faq of faqs">
             <div class="collapsible-header"><h1 class="icon q">Q</h1>{{ faq.question }}</div>
-            <div class="collapsible-body"><h1 class="icon a">A</h1><p>{{ faq.answer }}</p></div>
+            <div class="collapsible-body"><h1 class="icon a">A</h1><p [innerHTML]="faq.answer| safeHtml"></p></div>
           </li>
         </ul>
       </div>

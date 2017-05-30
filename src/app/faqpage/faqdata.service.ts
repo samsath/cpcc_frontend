@@ -1,17 +1,26 @@
 import { Injectable } from '@angular/core';
 import { Faq } from './faq';
+import {environment} from '../environment';
+import { Http, Response } from '@angular/http';
 
 @Injectable()
 export class FaqdataService {
   lastId: number = 0;
-  faqs: Faq[] = [
-    {"id":1, "question":"Question one", "answer":"anseredf sdf sfd", "sort_value":1},
-    {"id":2, "question":"Question two", "answer":"anseredf sdf sfd wdsf asdf sadf sdf.sd fsdf sdf sdf sdf sdaf regwergd gfsdg r rsgrsfdsg resg srgfd gresg ewgfdsg sfd gfdg ergweg dfs dfggr.anseredf sdf sfd wdsf asdf sadf sdf.sd fsdf sdf sdf sdf sdaf regwergd gfsdg r rsgrsfdsg resg srgfd gresg ewgfdsg sfd gfdg ergweg dfs dfggr.anseredf sdf sfd wdsf asdf sadf sdf.sd fsdf sdf sdf sdf sdaf regwergd gfsdg r rsgrsfdsg resg srgfd gresg ewgfdsg sfd gfdg ergweg dfs dfggr.anseredf sdf sfd wdsf asdf sadf sdf.sd fsdf sdf sdf sdf sdaf regwergd gfsdg r rsgrsfdsg resg srgfd gresg ewgfdsg sfd gfdg ergweg dfs dfggr.", "sort_value":2},
-    {"id":3, "question":"Question three", "answer":"anseredf sdf sfd", "sort_value":3},
-    {"id":4, "question":"Question four", "answer":"anseredf sdf sfd", "sort_value":4},
-  ];
+  faqs: Faq[] = [];
+  checking:boolean;
 
-  constructor() { }
+  constructor(private http: Http) { }
+
+  getFaq(){
+    this.http.get(environment.API_ENDPOINT+'faq')
+      .map((res: Response) => res.json())
+      .subscribe((json: Array<Object>) => {
+        for (let item of json){
+          let faq = new Faq(item);
+          this.addFaq(faq);
+        }
+      })
+  }
 
   addFaq(faq: Faq ): FaqdataService {
     if( !faq.id ){
@@ -22,6 +31,11 @@ export class FaqdataService {
   }
 
   getAllFaq(): Faq[] {
+    //this.getFaq();
+    if (this.faqs.length == 0 && !this.checking){
+      this.getFaq();
+      this.checking = true;
+    }
     return this.faqs;
   }
 
