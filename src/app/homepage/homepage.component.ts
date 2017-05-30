@@ -10,7 +10,7 @@ import { environment } from '../environment';
 export class HomepageComponent implements OnInit {
   title = 'Chiswick Pier Canoe Club';
   homepage;
-  images:string;
+  images;
   defaultImage = 'https://www.placecage.com/1000/1000';
   offset = 1000;
 
