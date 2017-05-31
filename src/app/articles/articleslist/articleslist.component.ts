@@ -6,7 +6,6 @@ import { ArticleDataService } from '../article-data.service';
   selector: 'app-articleslist',
   templateUrl: './articleslist.component.html',
   styleUrls: ['./articleslist.component.scss'],
-  providers: [ArticleDataService ]
 })
 export class ArticleslistComponent implements OnInit {
 

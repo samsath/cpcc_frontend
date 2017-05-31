@@ -1,6 +1,6 @@
-<div class="card session-card">
+<div class="card session-card" (click)="goToArticle()">
   <div class="card-image">
-    <img class="imageelement" [defaultImage]="defaultImage" [lazyLoad]="article.main_image" [offset]="offset"/>
+    <div class="imageelement" [ngStyle]="{'background-image': 'url(' + article.main_image.image?.file + ')'}"></div>
   </div>
   <div class="card-content">
     <span class="card-title">{{ article.title }}</span>

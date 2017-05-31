@@ -1,16 +1,17 @@
 export class Article {
-  id: number;
+  pk: number;
   title: string;
   post_date: string;
-  main_image: string;
+  main_image: Object;
   is_featured: boolean;
+  is_public: boolean;
   slug: string;
   list_description: string;
   description: string;
-  author: string;
+  author: Object;
   sort_value: number;
-  category: string;
-  gallery: Array<string>;
+  category: Array<Object>;
+  gallery: Array<Object>;
 
   constructor(values: Object = {}){
     Object.assign(this, values);

@@ -19,7 +19,6 @@ export class FaqpageComponent implements OnInit {
     this.http.get(environment.API_ENDPOINT+'pageimage')
       .map((res: Response) => res.json()).subscribe((json: Object) =>{
       this.image = json[0]['main_image']['image'];
-      console.log(this.image);
     });
   }
 

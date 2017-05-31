@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { Article } from '../articles/article';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-square-item',
@@ -13,7 +14,11 @@ export class SquareItemComponent implements OnInit {
   @Input()
   article: Article;
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  goToArticle(){
+    this.router.navigate(['article/',this.article.slug]);
+  }
 
   ngOnInit() {
   }

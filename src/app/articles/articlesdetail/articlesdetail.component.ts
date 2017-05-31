@@ -7,7 +7,6 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
   selector: 'app-articlesdetail',
   templateUrl: './articlesdetail.component.html',
   styleUrls: ['./articlesdetail.component.scss'],
-  providers: [ArticleDataService ]
 })
 export class ArticlesdetailComponent implements OnInit {
   article: Article;
@@ -25,6 +24,8 @@ export class ArticlesdetailComponent implements OnInit {
         this.slug = params['slug']
       });
     this.article = this.articleDataService.getArticleBySlug(this.slug);
+    console.log(this.slug);
+    console.log(this.article);
   }
 
 }

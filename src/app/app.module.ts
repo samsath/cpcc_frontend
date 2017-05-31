@@ -29,6 +29,7 @@ import { AboutpageComponent } from './aboutpage/aboutpage.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ArticleslistComponent } from './articles/articleslist/articleslist.component';
 import { ArticlesdetailComponent } from './articles/articlesdetail/articlesdetail.component';
+import { ArticleDataService } from './articles/article-data.service';
 import { EnquiryComponent } from './enquiry/enquiry.component';
 import { SquareItemComponent } from './square-item/square-item.component';
 import { FaqpageComponent } from './faqpage/faqpage.component';
@@ -96,7 +97,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     TidelevelDataService,
-    NextSessionService
+    NextSessionService,
+    ArticleDataService
   ],
   bootstrap: [AppComponent]
 })
