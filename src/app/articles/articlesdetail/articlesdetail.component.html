@@ -1,10 +1,21 @@
+<div class="imagewrap">
+  <div class="imageelement" [ngStyle]="{'background-image': 'url(' + article?.main_image.image.file + ')'}" ></div>
+</div>
 <div class="row">
   <div class="col s12">
     <div class="card-panel">
+      <div class="boxarea-action">
+        <a routerLink='/article/{{ article?.prev }}' *ngIf="article?.prev">Previous</a>
+        <a routerLink='/article/{{ article?.next }}' *ngIf="article?.next">Next</a>
+      </div>
       <h1>{{ article?.title }}</h1>
-      <h1>{{ article?.slug }}</h1>
+      <div class="boxarea-content" [innerHTML]="article?.description | safeHtml"></div>
 
-
+      <div class="imagegroup">
+        <div class="imagethumb" *ngFor="let image of article?.gallery; let i=index">
+          <img [src]="image?.image.small" (click)="open(i)"/>
+        </div>
+      </div>
 
     </div>
   </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {environment} from '../environment';
+import { Http, Response } from '@angular/http';
 
 @Component({
   selector: 'app-session',
@@ -7,18 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SessionComponent implements OnInit {
 
-  constructor() { }
+  sessions;
+
+  constructor(private http: Http) { }
 
   ngOnInit() {
   }
 
   get sections(){
-    return [
-      {"id":1,"content":"saasdasd","title":"one"},
-      {"id":2,"content":"saasdasd","title":"two"},
-      {"id":3,"content":"saasdasd","title":"two"},
-      {"id":4,"content":"saasdasd","title":"two"},
-    ]
+    this.http.get(environment.API_ENDPOINT+'faq')
+      .map((res: Response) => res.json())
+      .subscribe((json: Array<Object>) => {
+        this.sessions = json;
+      });
+    return this.sessions;
   }
 
 }

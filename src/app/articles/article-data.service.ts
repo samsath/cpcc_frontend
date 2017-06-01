@@ -38,10 +38,18 @@ export class ArticleDataService {
   }
 
   getArticleBySlug(slug: string ): Article{
-    console.log(this.articles);
-    return this.articles
-      .filter(article => article.slug == slug)
-      .pop()
+    if(!this.articles){
+      this.http.get(environment.API_ENDPOINT+'article/'+slug)
+        .map((res:Response) => res.json())
+        .subscribe((json: Object) =>{
+          console.log(json);
+          return new Article(json);
+        })
+    }else{
+      return this.articles
+        .filter(article => article.slug == slug)
+        .pop()
+    }
   }
 
   getArticleForCategory(slug: string): Article{

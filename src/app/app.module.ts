@@ -12,6 +12,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { LeafletModule } from '@asymmetrik/angular2-leaflet';
 import { CalendarModule } from 'angular-calendar';
 import { ChartsModule } from 'ng2-charts';
+import { LightboxModule } from 'angular2-lightbox';
 
 // services
 import { TidelevelDataService } from './shared/tidelevel-data.service';
@@ -93,7 +94,8 @@ const appRoutes: Routes = [
     HttpModule,
     LazyLoadImageModule,
     LeafletModule,
-    ChartsModule
+    ChartsModule,
+    LightboxModule
   ],
   providers: [
     TidelevelDataService,

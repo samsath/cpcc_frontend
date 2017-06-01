@@ -27,3 +27,14 @@
     }
   }
 }
+
+.imagegroup{
+  margin-top:20px;
+  display:flex;
+  flex-wrap:wrap;
+
+  .imagethumb{
+    margin-right:10px;
+    margin-top:10px;
+  }
+}
