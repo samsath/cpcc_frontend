@@ -8,15 +8,6 @@ import { Trip } from '../trips/trip';
 })
 export class MaplistItemComponent implements OnInit {
 
-  options = {
-    layers: [
-      L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', { maxZoom: 18 })
-    ],
-    zoom: 14,
-    zoomControl:false,
-    center: L.latLng({ lat: 51.4822222, lng: -0.251482 })
-  };
-
   @Input()
   trip: Trip;
 

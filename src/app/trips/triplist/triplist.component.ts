@@ -7,7 +7,6 @@ import * as L from 'leaflet';
   selector: 'app-triplist',
   templateUrl: './triplist.component.html',
   styleUrls: ['./triplist.component.scss'],
-  providers: [TripdataService]
 })
 export class TriplistComponent implements OnInit {
 

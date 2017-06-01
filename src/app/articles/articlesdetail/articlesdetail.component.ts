@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Article, Gallery } from '../article';
+import { Article } from '../article';
 import { ArticleDataService } from '../article-data.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Lightbox } from 'angular2-lightbox';
-import {isUndefined} from 'util';
 
 @Component({
   selector: 'app-articlesdetail',

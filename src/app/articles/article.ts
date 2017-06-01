@@ -1,24 +1,4 @@
-export class Gallery{
-  id:number;
-  image:Object;
-  download:Object;
-  embeded:Object;
-  map:Object;
-  pdf:Object;
-  video:Object;
-  name:string;
-  description:string;
-  slug:string;
-  created:string;
-  content_type:number;
-  next:string;
-  prev:string;
-
-  constructor(values: Object = {}){
-    Object.assign(this, values);
-  }
-}
-
+import {Media} from '../media';
 
 export class Article {
   pk: number;
@@ -33,7 +13,7 @@ export class Article {
   author: Object;
   sort_value: number;
   category: Array<Object>;
-  gallery: Array<Gallery>;
+  gallery: Array<Media>;
 
   constructor(values: Object = {}){
     Object.assign(this, values);

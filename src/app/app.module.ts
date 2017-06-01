@@ -44,6 +44,7 @@ import { MaplistItemComponent } from './maplist-item/maplist-item.component';
 import { EventsComponent } from './events/events.component';
 import { SessiondataService } from './session/sessiondata.service';
 import { NewsletterDataService } from './newsletter/newsletter-data.service';
+import { TripdataService } from './trips/tripdata.service';
 
 const appRoutes: Routes = [
   { path: '', component:HomepageComponent },
@@ -103,7 +104,8 @@ const appRoutes: Routes = [
     NextSessionService,
     ArticleDataService,
     SessiondataService,
-    NewsletterDataService
+    NewsletterDataService,
+    TripdataService
   ],
   bootstrap: [AppComponent]
 })

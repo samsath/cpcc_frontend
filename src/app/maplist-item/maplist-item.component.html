@@ -2,12 +2,12 @@
   <div class="card horizontal session-card">
     <div class="card-image">
       <div leaflet class="leafletmap"
-           [leafletOptions]="options"></div>
+           [leafletOptions]="trip.options"></div>
     </div>
     <div class="card-stacked">
       <div class="card-content">
         <span class="card-title">{{ trip.title }}</span>
-        <p class="date small">{{ trip.start_date }}</p>
+        <p class="date small">{{ trip.start_date| date:'mediumDate' }}</p>
         <p class="weather">10 C</p>
         <p class="breif">{{ trip.list_description }}</p>
       </div>
