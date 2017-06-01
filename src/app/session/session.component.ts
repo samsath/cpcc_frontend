@@ -3,6 +3,7 @@ import {environment} from '../environment';
 import { Http, Response } from '@angular/http';
 import { SessiondataService } from './sessiondata.service';
 import * as L from 'leaflet';
+import {Session} from './session';
 
 @Component({
   selector: 'app-session',
@@ -11,16 +12,9 @@ import * as L from 'leaflet';
 })
 export class SessionComponent implements OnInit {
 
-  sessions;
+  sessions = [];
   column:number;
 
-  options = {
-    layers: [
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18 })
-    ],
-    zoom: 14,
-    zoomControl:false,
-  };
 
   constructor(private http: Http,
               private sessionsdata: SessiondataService) { }

@@ -10,7 +10,7 @@ export class MaplistItemComponent implements OnInit {
 
   options = {
     layers: [
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18 })
+      L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', { maxZoom: 18 })
     ],
     zoom: 14,
     zoomControl:false,

@@ -15,14 +15,16 @@
           <div class="boxarea-content" [innerHTML]="section.description | safeHtml"></div>
 
           <div class="boxarea-map">
-            {{ section.location.map }}
+            <div leaflet class="leafletmap"
+                 [leafletOptions]="section.options"
+            ></div>
           </div>
 
+          <div class="card-action">
+            <a href="/session">Find us</a>
+            <a href="/faq">FAQ</a>
           </div>
-          <div class="box-area-action">
-            <div leaflet class="leafletmap"
-                 [leafletOptions]="section.options"></div>
-          </div>
+
         </div>
       </div>
     </div>

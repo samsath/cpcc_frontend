@@ -73,6 +73,15 @@
   }
 }
 
+.boxarea-map{
+  position: relative;
+  height:300px;
+
+  .leafletmap{
+    height:100%;
+  }
+}
+
 app-content-area{
   .boxarea-action {
     position: relative;
@@ -103,5 +112,31 @@ app-content-area{
 
   h1 {
     margin-top: 0px;
+  }
+  .card-action{
+    margin-top:20px;
+
+    a:not(.btn):not(.btn-large):not(.btn-floating) {
+      background: $main;
+      padding: 5px 7px;
+      color: $background;
+
+      line-height: 40px;
+
+      transition: background 1s, color 1s;
+      transition-timing-function: ease-in-out;
+
+      &:hover {
+        background: $background;
+        color: $main;
+        border: 1px solid $main;
+
+      }
+    }
+
+    &:last-child{
+      border-radius: 0 0 10px 10px;
+    }
+
   }
 }
