@@ -12,11 +12,16 @@
           <div class="boxarea-header">
             <h1>{{ section.title }}</h1>
           </div>
-          <div class="boxarea-content" [innerHTML]="section.description | safeHtml">
+          <div class="boxarea-content" [innerHTML]="section.description | safeHtml"></div>
+
+          <div class="boxarea-map">
+            {{ section.location.map }}
+          </div>
 
           </div>
           <div class="box-area-action">
-
+            <div leaflet class="leafletmap"
+                 [leafletOptions]="section.options"></div>
           </div>
         </div>
       </div>

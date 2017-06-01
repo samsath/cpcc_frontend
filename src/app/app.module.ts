@@ -42,6 +42,7 @@ import { TriplistComponent } from './trips/triplist/triplist.component';
 import { TripdetailComponent } from './trips/tripdetail/tripdetail.component';
 import { MaplistItemComponent } from './maplist-item/maplist-item.component';
 import { EventsComponent } from './events/events.component';
+import { SessiondataService } from './session/sessiondata.service';
 
 
 const appRoutes: Routes = [
@@ -100,7 +101,8 @@ const appRoutes: Routes = [
   providers: [
     TidelevelDataService,
     NextSessionService,
-    ArticleDataService
+    ArticleDataService,
+    SessiondataService
   ],
   bootstrap: [AppComponent]
 })
