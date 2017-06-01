@@ -5,8 +5,7 @@ import { NewsletterDataService } from '../newsletter-data.service';
 @Component({
   selector: 'app-newsletter',
   templateUrl: './newsletter.component.html',
-  styleUrls: ['./newsletter.component.scss'],
-  providers: [NewsletterDataService]
+  styleUrls: ['./newsletter.component.scss']
 })
 export class NewsletterComponent implements OnInit {
 

@@ -43,7 +43,7 @@ import { TripdetailComponent } from './trips/tripdetail/tripdetail.component';
 import { MaplistItemComponent } from './maplist-item/maplist-item.component';
 import { EventsComponent } from './events/events.component';
 import { SessiondataService } from './session/sessiondata.service';
-
+import { NewsletterDataService } from './newsletter/newsletter-data.service';
 
 const appRoutes: Routes = [
   { path: '', component:HomepageComponent },
@@ -102,7 +102,8 @@ const appRoutes: Routes = [
     TidelevelDataService,
     NextSessionService,
     ArticleDataService,
-    SessiondataService
+    SessiondataService,
+    NewsletterDataService
   ],
   bootstrap: [AppComponent]
 })

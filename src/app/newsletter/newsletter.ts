@@ -1,11 +1,29 @@
+export class Author {
+  pk:number;
+  username:string;
+  first_name:string;
+  last_name:string;
+  email:string;
+  fullname:string;
+
+  constructor(values: Object = {}){
+    Object.assign(this, values);
+  }
+}
+
 export class Newsletter {
   id: number;
-  slug: string;
-  number: string;
+  author: Author;
   title: string;
-  date: string;
+  is_public:boolean;
+  is_featured:boolean;
+  slug: string;
+  created:string;
+  modified:string;
+  number: string;
+  postdate: string;
   sort_value: number;
-  content: string;
+  newsletter: string;
 
   constructor(values: Object = {}){
     Object.assign(this, values);

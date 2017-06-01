@@ -6,8 +6,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 @Component({
   selector: 'app-newsletterdetai',
   templateUrl: './newsletterdetail.component.html',
-  styleUrls: ['./newsletterdetail.component.scss'],
-  providers: [NewsletterDataService]
+  styleUrls: ['./newsletterdetail.component.scss']
 })
 export class NewsletterdetailComponent implements OnInit {
   newsletter: Newsletter;

@@ -14,6 +14,8 @@
           </div>
           <div class="boxarea-content" [innerHTML]="section.description | safeHtml"></div>
 
+          <div class="boxarea-content" [innerHTML]="section.cost | safeHtml"></div>
+
           <div class="boxarea-map">
             <div leaflet class="leafletmap"
                  [leafletOptions]="section.options"

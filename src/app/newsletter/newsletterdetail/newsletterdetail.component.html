@@ -11,7 +11,7 @@
         <div class="boxarea-header">
           <h1>{{ newsletter.number }}{{ newsletter.title }}</h1>
         </div>
-        <div class="boxarea-content" [innerHTML]="newsletter.content | safeHtml">
+        <div class="boxarea-content" [innerHTML]="newsletter.newsletter | safeHtml">
         </div>
       </div>
     </div>
