@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import { environment } from '../environment';
 
 @Component({
   selector: 'app-enquiry',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnquiryComponent implements OnInit {
 
-  constructor() { }
+  image;
+
+  constructor(private http: Http) { }
 
   ngOnInit() {
+    this.http.get(environment.API_ENDPOINT+'pageimage')
+      .map((res: Response) => res.json()).subscribe((json: Object) =>{
+      this.image = json[0]['main_image']['image'];
+    });
   }
 
 }

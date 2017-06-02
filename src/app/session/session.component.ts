@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {environment} from '../environment';
 import { Http, Response } from '@angular/http';
 import { SessiondataService } from './sessiondata.service';
-import * as L from 'leaflet';
-import {Session} from './session';
+import { environment } from '../environment';
+
 
 @Component({
   selector: 'app-session',
@@ -12,14 +11,18 @@ import {Session} from './session';
 })
 export class SessionComponent implements OnInit {
 
-  sessions = [];
   column:number;
+  image;
 
 
   constructor(private http: Http,
               private sessionsdata: SessiondataService) { }
 
   ngOnInit() {
+    this.http.get(environment.API_ENDPOINT+'pageimage')
+      .map((res: Response) => res.json()).subscribe((json: Object) =>{
+      this.image = json[0]['main_image']['image'];
+    });
   }
 
   get sections(){

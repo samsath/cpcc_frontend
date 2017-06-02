@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from '../article';
 import { ArticleDataService } from '../article-data.service';
+import { Http, Response } from '@angular/http';
+import { environment } from '../../environment';
 
 @Component({
   selector: 'app-articleslist',
@@ -9,9 +11,17 @@ import { ArticleDataService } from '../article-data.service';
 })
 export class ArticleslistComponent implements OnInit {
 
-  constructor(private articleDataService: ArticleDataService) { }
+  image;
+
+  constructor(
+    private http: Http,
+    private articleDataService: ArticleDataService) { }
 
   ngOnInit() {
+    this.http.get(environment.API_ENDPOINT+'pageimage')
+      .map((res: Response) => res.json()).subscribe((json: Object) =>{
+      this.image = json[0]['main_image']['image'];
+    });
   }
 
   get articles(){

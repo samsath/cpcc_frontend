@@ -1,0 +1,26 @@
+<div class="imagewrap">
+  <div class="imageelement" [ngStyle]="{'background-image': 'url(' + image?.file + ')'}" ></div>
+</div>
+<div class="container">
+  <div class="row height-spacer"></div>
+  <div class="row">
+
+    <div *ngFor="let member of members">
+      <div class="col " [ngClass]="{'s12 m12 l9':column == 1, 's12 m12 l6':column == 2, 's12 m12 l4':column >= 3}">
+        <div class="card-panel">
+
+          <div class="boxarea-header">
+            <h1>{{ member.title }}</h1>
+          </div>
+          <p class="date">From {{ member.from_date| date:'d/M/yy'}} to {{ member.end_date| date:'d/M/yy'}}</p>
+          <div class="boxarea-content" [innerHTML]="member.description | safeHtml"></div>
+
+          <div class="boxarea-content" [innerHTML]="member.cost | safeHtml"></div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

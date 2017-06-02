@@ -45,6 +45,8 @@ import { EventsComponent } from './events/events.component';
 import { SessiondataService } from './session/sessiondata.service';
 import { NewsletterDataService } from './newsletter/newsletter-data.service';
 import { TripdataService } from './trips/tripdata.service';
+import { MembershipComponent } from './membership/membership.component';
+import { MembershipService } from './membership/membership.service';
 
 const appRoutes: Routes = [
   { path: '', component:HomepageComponent },
@@ -58,7 +60,8 @@ const appRoutes: Routes = [
   { path: 'newsletter/:slug', component:NewsletterdetailComponent },
   { path: 'trips', component:TriplistComponent },
   { path: 'trips/:slug', component:TripdetailComponent },
-  { path: 'events', component:EventsComponent }
+  { path: 'events', component:EventsComponent },
+  { path: 'membership', component:MembershipComponent },
 
 ];
 
@@ -85,7 +88,8 @@ const appRoutes: Routes = [
     TriplistComponent,
     TripdetailComponent,
     MaplistItemComponent,
-    EventsComponent
+    EventsComponent,
+    MembershipComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -105,7 +109,8 @@ const appRoutes: Routes = [
     ArticleDataService,
     SessiondataService,
     NewsletterDataService,
-    TripdataService
+    TripdataService,
+    MembershipService
   ],
   bootstrap: [AppComponent]
 })

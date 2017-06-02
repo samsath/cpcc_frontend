@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Newsletter } from '../newsletter';
 import { NewsletterDataService } from '../newsletter-data.service';
+import { Http, Response } from '@angular/http';
+import { environment } from '../../environment';
 
 @Component({
   selector: 'app-newsletter',
@@ -9,9 +11,16 @@ import { NewsletterDataService } from '../newsletter-data.service';
 })
 export class NewsletterComponent implements OnInit {
 
-  constructor(private newsletterDataService: NewsletterDataService) { }
+  image;
+
+  constructor(private http: Http,
+              private newsletterDataService: NewsletterDataService) { }
 
   ngOnInit() {
+    this.http.get(environment.API_ENDPOINT+'pageimage')
+      .map((res: Response) => res.json()).subscribe((json: Object) =>{
+      this.image = json[0]['main_image']['image'];
+    });
   }
 
   get newsletters(){
