@@ -4,11 +4,14 @@ import { TripdataService } from '../tripdata.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Lightbox } from 'angular2-lightbox';
 import * as L from 'leaflet';
+import {routerTransition} from '../../router.animations';
 
 @Component({
   selector: 'app-tripdetail',
   templateUrl: './tripdetail.component.html',
   styleUrls: ['./tripdetail.component.scss'],
+  animations: [routerTransition()],
+  host: {'[@routerTransition]': ''}
 })
 export class TripdetailComponent implements OnInit {
   trip: Trip;

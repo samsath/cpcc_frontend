@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { MembershipService } from './membership.service';
 import { Http, Response } from '@angular/http';
 import { environment } from '../environment';
+import {routerTransition} from '../router.animations';
 
 @Component({
   selector: 'app-membership',
   templateUrl: './membership.component.html',
-  styleUrls: ['./membership.component.scss']
+  styleUrls: ['./membership.component.scss'],
+  animations: [routerTransition()],
+  host: {'[@routerTransition]': ''}
 })
 export class MembershipComponent implements OnInit {
 

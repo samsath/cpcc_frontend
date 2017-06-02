@@ -4,11 +4,14 @@ import { NewsletterDataService } from '../newsletter-data.service'
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Http, Response } from '@angular/http';
 import { environment } from '../../environment';
+import {routerTransition} from '../../router.animations';
 
 @Component({
   selector: 'app-newsletterdetai',
   templateUrl: './newsletterdetail.component.html',
-  styleUrls: ['./newsletterdetail.component.scss']
+  styleUrls: ['./newsletterdetail.component.scss'],
+  animations: [routerTransition()],
+  host: {'[@routerTransition]': ''}
 })
 export class NewsletterdetailComponent implements OnInit {
   newsletter: Newsletter;

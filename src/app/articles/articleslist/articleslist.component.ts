@@ -3,11 +3,14 @@ import { Article } from '../article';
 import { ArticleDataService } from '../article-data.service';
 import { Http, Response } from '@angular/http';
 import { environment } from '../../environment';
+import {routerTransition} from '../../router.animations';
 
 @Component({
   selector: 'app-articleslist',
   templateUrl: './articleslist.component.html',
   styleUrls: ['./articleslist.component.scss'],
+  animations: [routerTransition()],
+  host: {'[@routerTransition]': ''}
 })
 export class ArticleslistComponent implements OnInit {
 

@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { environment } from '../environment';
+import {routerTransition} from '../router.animations';
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.scss']
+  styleUrls: ['./homepage.component.scss'],
+  animations: [routerTransition()],
+  host: {'[@routerTransition]': ''}
 })
 export class HomepageComponent implements OnInit {
   title = 'Chiswick Pier Canoe Club';
@@ -21,7 +24,6 @@ export class HomepageComponent implements OnInit {
       .map((res: Response) => res.json()).subscribe((json: Object) =>{
         if(json[0]['main_image']){
           this.images = json[0]['main_image']['image'];
-          console.log(this.images);
         }
         this.homepage = json;
 

@@ -2,12 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { SessiondataService } from './sessiondata.service';
 import { environment } from '../environment';
+import {routerTransition} from '../router.animations';
 
 
 @Component({
   selector: 'app-session',
   templateUrl: './session.component.html',
-  styleUrls: ['./session.component.scss']
+  styleUrls: ['./session.component.scss'],
+  animations: [routerTransition()],
+  host: {'[@routerTransition]': ''}
 })
 export class SessionComponent implements OnInit {
 

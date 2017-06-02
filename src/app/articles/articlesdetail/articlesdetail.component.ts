@@ -3,11 +3,14 @@ import { Article } from '../article';
 import { ArticleDataService } from '../article-data.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Lightbox } from 'angular2-lightbox';
+import {routerTransition} from '../../router.animations';
 
 @Component({
   selector: 'app-articlesdetail',
   templateUrl: './articlesdetail.component.html',
   styleUrls: ['./articlesdetail.component.scss'],
+  animations: [routerTransition()],
+  host: {'[@routerTransition]': ''}
 })
 export class ArticlesdetailComponent implements OnInit {
   article: Article;

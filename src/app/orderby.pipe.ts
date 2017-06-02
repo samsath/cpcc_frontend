@@ -25,8 +25,6 @@ export class OrderbyPipe implements PipeTransform {
         byVal = -1;
         orderByValue = orderByValue.substring(1)
       }
-      console.log("byVal",byVal);
-      console.log("orderByValue",orderByValue);
 
       array.sort((a: any, b: any) => {
         if(a[orderByValue] < b[orderByValue]) {

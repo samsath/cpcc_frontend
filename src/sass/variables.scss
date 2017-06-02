@@ -43,3 +43,5 @@ input:not([type]).invalid + label:after, input:not([type]):focus.invalid + label
   color:$main;
 }
 
+.container{
+}

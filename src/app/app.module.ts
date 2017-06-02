@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 // thirdparty
@@ -47,6 +48,7 @@ import { NewsletterDataService } from './newsletter/newsletter-data.service';
 import { TripdataService } from './trips/tripdata.service';
 import { MembershipComponent } from './membership/membership.component';
 import { MembershipService } from './membership/membership.service';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const appRoutes: Routes = [
   { path: '', component:HomepageComponent },
@@ -62,6 +64,7 @@ const appRoutes: Routes = [
   { path: 'trips/:slug', component:TripdetailComponent },
   { path: 'events', component:EventsComponent },
   { path: 'membership', component:MembershipComponent },
+  { path: '**', component:NotFoundComponent },
 
 ];
 
@@ -89,12 +92,14 @@ const appRoutes: Routes = [
     TripdetailComponent,
     MaplistItemComponent,
     EventsComponent,
-    MembershipComponent
+    MembershipComponent,
+    NotFoundComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
     CalendarModule.forRoot(),
     MaterializeModule,
+    BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
     HttpModule,

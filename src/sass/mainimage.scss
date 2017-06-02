@@ -1,10 +1,21 @@
 
+.imagespacer {
+  width: 100%;
+  height: 60%;
+  position: relative;
+  display: block;
+
+  &.half{
+    height:10%;
+  }
+}
+
 .imagewrap{
   position: fixed;
   display: block;
   width: 100%;
   height: 700px;
-  top: 0px;
+  top: 57px;
   left: 0px;
   z-index:-1;
 

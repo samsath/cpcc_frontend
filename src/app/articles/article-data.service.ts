@@ -42,7 +42,6 @@ export class ArticleDataService {
       this.http.get(environment.API_ENDPOINT+'article/'+slug)
         .map((res:Response) => res.json())
         .subscribe((json: Object) =>{
-          console.log(json);
           return new Article(json);
         })
     }else{

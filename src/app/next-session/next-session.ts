@@ -16,7 +16,6 @@ export class NextSession {
   }
 
   fromJSON(json) {
-    console.log(json);
     for (var propName in json)
       this[propName] = json[propName];
     return this;

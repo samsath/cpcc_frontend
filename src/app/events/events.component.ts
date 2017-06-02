@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import { CalendarEvent, CalendarMonthViewDay } from 'angular-calendar';
+import {routerTransition} from '../router.animations';
 
 
 interface CppEvent extends CalendarEvent {
@@ -10,7 +11,9 @@ interface CppEvent extends CalendarEvent {
   selector: 'app-events',
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  animations: [routerTransition()],
+  host: {'[@routerTransition]': ''}
 })
 export class EventsComponent implements OnInit {
   viewDate: Date = new Date();

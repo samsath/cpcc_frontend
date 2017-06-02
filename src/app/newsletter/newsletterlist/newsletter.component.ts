@@ -3,11 +3,14 @@ import { Newsletter } from '../newsletter';
 import { NewsletterDataService } from '../newsletter-data.service';
 import { Http, Response } from '@angular/http';
 import { environment } from '../../environment';
+import {routerTransition} from '../../router.animations';
 
 @Component({
   selector: 'app-newsletter',
   templateUrl: './newsletter.component.html',
-  styleUrls: ['./newsletter.component.scss']
+  styleUrls: ['./newsletter.component.scss'],
+  animations: [routerTransition()],
+  host: {'[@routerTransition]': ''}
 })
 export class NewsletterComponent implements OnInit {
 
