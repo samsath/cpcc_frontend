@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 import { environment } from '../environment';
 import {routerTransition} from '../router.animations';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-enquiry',
@@ -13,14 +14,48 @@ import {routerTransition} from '../router.animations';
 export class EnquiryComponent implements OnInit {
 
   image;
+  mainForm: FormGroup;
+  mailForm: FormGroup;
 
-  constructor(private http: Http) { }
+
+  constructor(private http: Http) {
+
+  }
 
   ngOnInit() {
+    this.mainForm = new FormGroup({
+      'email': new FormControl(),
+      'name': new FormControl(),
+      'comment': new FormControl()
+    });
+
+    this.mailForm = new FormGroup({
+      'email': new FormControl(),
+      'name': new FormControl()
+    });
+
     this.http.get(environment.API_ENDPOINT+'pageimage')
       .map((res: Response) => res.json()).subscribe((json: Object) =>{
       this.image = json[0]['main_image']['image'];
     });
+  }
+
+
+  mainsend(form: any): void {
+    console.log(form);
+    this.http
+      .post(environment.API_ENDPOINT+'enquiry',
+        JSON.stringify({ email: form.email, name: form.name, comment: form.comment }))
+      .subscribe( ret_data => {
+        console.log(ret_data)
+      }, error => {
+        console.log(error.json());
+      });
+
+  }
+
+  mailsend(form: any): void {
+    console.log(form);
   }
 
 }

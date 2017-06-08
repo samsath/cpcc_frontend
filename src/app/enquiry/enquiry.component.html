@@ -13,24 +13,24 @@
         Please fill in the form below or send us an email and we shall get back in contact with you shortly.</p>
 
         <div>
-          <form class="formhalf">
+          <form [formGroup]="mainForm" (ngSubmit)="mainsend(mainForm.value)" class="formhalf">
             <div class="input-field">
-              <input id="message_email" type="email" class="validate">
+              <input id="message_email" type="email" class="validate" name="email" [formControl]="mainForm.controls['email']" required>
               <label for="message_email">Email</label>
             </div>
 
             <div class="input-field">
-              <input id="message_name" type="text" class="validate">
+              <input id="message_name" type="text" class="validate" name="name" [formControl]="mainForm.controls['name']" required>
               <label for="message_name">Name</label>
             </div>
 
             <div class="input-field">
-              <textarea id="message_text" class="materialize-textarea"></textarea>
+              <textarea id="message_text" class="materialize-textarea" name="comment" [formControl]="mainForm.controls['comment']" required></textarea>
               <label for="message_text">Comment</label>
             </div>
 
             <div class="input-field">
-              <a class="waves-effect waves-light btn">Send</a>
+              <button class="waves-effect waves-light btn" type="submit">Send</button>
             </div>
 
 
@@ -57,25 +57,27 @@
 
       <div class="col s12 m12 l12">
         <!-- mailing list subscribe -->
-        <form class="card session-card">
-          <div class="card-content">
+        <div class="card session-card">
+          <form class="card-content" [formGroup]="mailForm" (ngSubmit)="mailsend(mailForm.value)">
             <span class="card-title">Subscribe to the Mailing list</span>
 
             <div class="input-field">
-              <input id="sub_email" type="email" class="validate">
+              <input id="sub_email" type="email" class="validate" name="email" [formControl]="mailForm.controls['email']" required>
               <label for="sub_email">Email</label>
             </div>
 
             <div class="input-field">
-              <input id="sub_name" type="text" class="validate">
+              <input id="sub_name" type="text" class="validate" name="name" [formControl]="mailForm.controls['name']" required>
               <label for="sub_name">Name</label>
             </div>
 
-          </div>
-          <div class="card-action">
-            <button class="btn">Send</button>
-          </div>
-        </form>
+            <div class="input-field">
+              <button class="waves-effect waves-light btn" type="submit">Send</button>
+            </div>
+
+          </form>
+
+        </div>
       </div>
     </div>
   </div>

@@ -1,11 +1,10 @@
 // system
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule, XSRFStrategy, CookieXSRFStrategy } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 
 // thirdparty
 import { MaterializeModule } from 'angular2-materialize';
@@ -49,6 +48,8 @@ import { TripdataService } from './trips/tripdata.service';
 import { MembershipComponent } from './membership/membership.component';
 import { MembershipService } from './membership/membership.service';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CalendarService } from './events/calendar.service';
+
 
 const appRoutes: Routes = [
   { path: '', component:HomepageComponent },
@@ -102,6 +103,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     LazyLoadImageModule,
     LeafletModule,
@@ -115,7 +117,8 @@ const appRoutes: Routes = [
     SessiondataService,
     NewsletterDataService,
     TripdataService,
-    MembershipService
+    MembershipService,
+    CalendarService
   ],
   bootstrap: [AppComponent]
 })
