@@ -1,7 +1,9 @@
-import {Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { CalendarEvent, CalendarMonthViewDay } from 'angular-calendar';
 import {routerTransition} from '../router.animations';
-
+import { CalendarService } from './calendar.service';
+import { Eventdate } from './eventdate';
+import { Subject } from 'rxjs/Subject';
 
 interface CppEvent extends CalendarEvent {
   type: String;
@@ -16,14 +18,24 @@ interface CppEvent extends CalendarEvent {
   host: {'[@routerTransition]': ''}
 })
 export class EventsComponent implements OnInit {
+
+  dateelement: (day: CalendarMonthViewDay) => void;
   viewDate: Date = new Date();
   events: CppEvent[] = [];
   view: string = 'month';
 
-  constructor() {}
+  constructor(private calser: CalendarService,) {}
+
+
+  getDay(date:Date): Eventdate{
+    if(date){
+      return this.calser.getDay(date);
+    }
+  }
 
 
   dayData(cell: CalendarMonthViewDay):void {
+
     const tide:Array<any> = [
       {data: [{x:0,y:3},{x:4.2, y:0.2 },{x:9.5,y:4.7},{x:17.0,y:0.4},{x:20,y:4.6},{x:24,y:3.9}], label: 'Tide'},
     ];
@@ -41,7 +53,7 @@ export class EventsComponent implements OnInit {
       pointHoverBackgroundColor: '#2287b0',
       pointHoverBorderColor: '#2287b0'
     }];
-    const weather: string = "10 C";
+    const weather: string = '10 C';
     const activities: any = {};
     cell['tideData'] = Object.assign(tide);
     cell['tideOptions'] = Object.assign(tideoptions);
@@ -51,7 +63,9 @@ export class EventsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.calser.getCalendar(this.viewDate);
   }
+
 
 
 }
