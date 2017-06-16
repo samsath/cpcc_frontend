@@ -94,7 +94,7 @@ const appRoutes: Routes = [
     MaplistItemComponent,
     EventsComponent,
     MembershipComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

@@ -22,6 +22,7 @@ export class Eventdate {
   temperature: number;
   created: string;
   modified: string;
+  start: Date;
 
   constructor(values: Object = {}){
     Object.assign(this, values);

@@ -6,7 +6,7 @@ import {Http, Response} from '@angular/http';
 @Injectable()
 export class CalendarService {
 
-  calendar: {[s:string]: any }= <any>{};
+  calendar: {[s:string]: Eventdate }= <any>{};
   date: string;
   checking:boolean;
   month: number;
@@ -21,6 +21,7 @@ export class CalendarService {
       .subscribe((json: Array<Object>) => {
         for (let item of json) {
           let day = new Eventdate(item);
+          day.start = new Date(day.date);
           this.calendar[day.date] = day;
         }
       });
@@ -43,12 +44,10 @@ export class CalendarService {
     }
   }
 
-
-  getDay(date: Date): Eventdate {
+  getDayRemote(date: Date): Promise<Eventdate>{
     let year = date.getFullYear();
     let month = date.getMonth();
     let day = date.getDate();
-
     let str_year = year.toString();
     let str_month = month.toString();
     let str_day = day.toString();
@@ -58,21 +57,40 @@ export class CalendarService {
     if (str_day.length < 2){
       str_day = '0' + str_day;
     }
-
     let str_date = str_year + '-' + str_month + '-' + str_day;
-
-    if(this.calendar[str_date] === undefined || null){
-      if(this.datecheck.indexOf(str_date) === -1){
-        this.datecheck.push(str_date);
-        this.getRemoteDay(str_year, str_month, str_day);
-      }
-    }
-
-    return this.calendar[str_date];
-
+    return this.http.get(environment.API_ENDPOINT + 'calender/' + year + '/' + month + '/' + day)
+      .map((res: Response) => res.json()).toPromise();
   }
 
-  getCalendar(date:Date): void {
+
+  getDay(date: Date): Promise<Eventdate> {
+
+    let year = date.getFullYear();
+    let month = date.getMonth();
+    let day = date.getDate();
+    let str_year = year.toString();
+    let str_month = month.toString();
+    let str_day = day.toString();
+    if(str_month.length < 2){
+      str_month = '0'+str_month;
+    }
+    if (str_day.length < 2){
+      str_day = '0' + str_day;
+    }
+    let str_date = str_year + '-' + str_month + '-' + str_day;
+    if(this.calendar[str_date] === undefined || null){
+      if(this.datecheck.indexOf(str_date) === -1){
+        this.getRemoteDay(str_year, str_month, str_day);
+        this.datecheck.push(str_date);
+      }
+    }
+    setTimeout(() => {
+
+    }, 1000);
+    return Promise.resolve(this.calendar[str_date]);
+  };
+
+  getCalendar(date:Date): Promise<{[s:string]: Eventdate }> {
     let year = date.getFullYear();
     let month = date.getMonth();
     if(this.year != year || this.month != month){
@@ -84,7 +102,8 @@ export class CalendarService {
       this.getMonth();
       this.checking = true;
     }
-    console.log(this.calendar);
+    return Promise.resolve(this.calendar);
   }
+
 
 }

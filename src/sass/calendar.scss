@@ -50,3 +50,17 @@
   }
 
 }
+
+.modal-overlay{
+  display: none !important;
+}
+
+.eventblock{
+  margin-bottom:10px;
+  padding-bottom:10px !important;
+  border-bottom:1px solid $main;
+  p{
+    margin:0px;
+    padding-bottom:2px;
+  }
+}
