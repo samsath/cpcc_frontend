@@ -4,7 +4,7 @@
 import {trigger, state, animate, style, transition} from '@angular/animations';
 
 export function routerTransition() {
-  return slideToTop();
+  return fadeInOut();
 }
 
 function fadeInOut() {

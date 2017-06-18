@@ -6,7 +6,7 @@
   <div class="row height-spacer"></div>
   <div class="row">
     <!-- This is for main section -->
-    <div class="col s12 m9 l9">
+    <div class="col s12 m12 l9">
       <div class="card-panel">
         <h1>Enquiries</h1>
         <p>If you have a question or would like more information about the club and what we do.<br>
@@ -41,9 +41,8 @@
     </div>
 
     <!-- This is for the left col -->
-    <div class="col s12 m3 l3">
+    <div class="col s12 m12 l3">
       <!-- get in touch box -->
-      <div class="col s12 m12 l12">
         <div class="card session-card">
           <div class="card-content">
             <span class="card-title">Get in Touch</span>
@@ -53,9 +52,7 @@
             <a href="mailto:enquiry@club.com">Email </a>
           </div>
         </div>
-      </div>
 
-      <div class="col s12 m12 l12">
         <!-- mailing list subscribe -->
         <div class="card session-card">
           <form class="card-content" [formGroup]="mailForm" (ngSubmit)="mailsend(mailForm.value)">
@@ -78,7 +75,8 @@
           </form>
 
         </div>
-      </div>
+
+
     </div>
   </div>
 </div>

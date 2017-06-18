@@ -40,14 +40,26 @@ export class EnquiryComponent implements OnInit {
     });
   }
 
+  getCookie(name) {
+    let value = "; " + document.cookie;
+    let parts = value.split("; " + name + "=");
+    if (parts.length == 2) {
+      return parts.pop().split(";").shift();
+    }
+  }
+
 
   mainsend(form: any): void {
     console.log(form);
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    headers.append('X-CSRFToken', this.getCookie('csrftoken'));
     this.http
       .post(environment.API_ENDPOINT+'enquiry',
-        JSON.stringify({ email: form.email, name: form.name, comment: form.comment }))
+        JSON.stringify({ email: form.email, name: form.name, comment: form.comment }),{headers: headers})
       .subscribe( ret_data => {
-        console.log(ret_data)
+        console.log(ret_data);
+        form.clear()
       }, error => {
         console.log(error.json());
       });
@@ -56,6 +68,18 @@ export class EnquiryComponent implements OnInit {
 
   mailsend(form: any): void {
     console.log(form);
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    headers.append('X-CSRFToken', this.getCookie('csrftoken'));
+    this.http
+      .post(environment.API_ENDPOINT+'newsletter',
+        JSON.stringify({ email: form.email, name: form.name }),{headers: headers})
+      .subscribe( ret_data => {
+        console.log(ret_data)
+        form.clear()
+      }, error => {
+        console.log(error.json());
+      });
   }
 
 }
