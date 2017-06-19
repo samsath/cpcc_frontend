@@ -4,6 +4,7 @@
   height: 60%;
   position: relative;
   display: block;
+  pointer-events: none;
 
   &.half{
     height:10%;
@@ -18,6 +19,8 @@
   top: 57px;
   left: 0px;
   z-index:-1;
+  pointer-events: none;
+  background:transparent;
 
   .imageelement{
     display: block;
@@ -27,8 +30,10 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    background-image: url("assets/images/CPCClogo_border.png");
     -webkit-transition: background-image 1s ease-in-out;
     transition: background-image 1s ease-in-out;
+    pointer-events: auto;
 
   }
 

@@ -14,6 +14,7 @@
       background-repeat: no-repeat;
       border-top-left-radius: 9px;
       border-top-right-radius: 9px;
+      background-image: url("assets/images/CPCClogo_border.png");
     }
   }
 
@@ -53,6 +54,13 @@
         font-size:1rem;
         font-weight: normal;
       }
+    }
+
+    .locationsection{
+      font-size:24px;
+      font-weight:300;
+      position: relative;
+      top:-12px;
     }
 
     p{
@@ -139,7 +147,24 @@ app-content-area{
     }
 
   }
+
+  .boxarea-header{
+    h1{
+      display:inline-block;
+    }
+
+    .download{
+      display:inline-block;
+      position: relative;
+      top:0px;
+      right:0px;
+      float:right;
+    }
+  }
+
+
 }
+
 
 app-events{
   position: absolute;

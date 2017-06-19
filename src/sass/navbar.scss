@@ -8,6 +8,21 @@
     .brand-logo{
       color:$main;
       font-size:1.3rem;
+
+      p{
+        margin: 2px 66px;
+        color:$darkblue;
+      }
+
+      span.logoelement{
+        width:65px;
+        height:100%;
+        background-image: url("assets/images/CPCClogo.png");
+        background-size: 50px 50px;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
     }
 
     ul{
@@ -43,3 +58,6 @@
 #sidenav-overlay{
   z-index: 990;
 }
+
+
+

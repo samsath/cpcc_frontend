@@ -64,7 +64,7 @@ export class TripdetailComponent implements OnInit {
         ],
 
         zoom: 14,
-        zoomControl:false,
+        zoomControl:true,
         center:L.latLng({lat: coord[1], lng: coord[0]})
       }
     }

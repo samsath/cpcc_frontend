@@ -34,4 +34,12 @@ export class MembershipService {
     return this.memberships;
   }
 
+
+  getFeatureMembership(): Membership{
+    let member = this.memberships
+      .filter(memers => memers.is_featured == true)
+      .pop();
+    return member;
+  }
+
 }

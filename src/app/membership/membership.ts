@@ -12,6 +12,7 @@ export class Membership {
   end_date:string;
   cost:string;
   sort_value:number;
+  download: any;
 
   constructor(values: Object = {} ){
     Object.assign(this, values);

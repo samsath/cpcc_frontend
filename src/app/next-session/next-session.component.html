@@ -2,6 +2,8 @@
   <div class="card session-card">
     <div class="card-content">
       <span class="card-title">Next Session</span>
+      <p class="locationsection" *ngIf="session?.club">at Chiswick Pier</p>
+      <p class="locationsection" *ngIf="!session?.club">at the Pool</p>
       <p class="date">{{(session)?.date}}</p>
       <p class="brief">{{(session)?.content}}</p>
     </div>

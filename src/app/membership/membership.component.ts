@@ -13,7 +13,7 @@ import {routerTransition} from '../router.animations';
 })
 export class MembershipComponent implements OnInit {
 
-  column:number;
+  column=0;
   image;
 
   constructor(private http: Http,
@@ -28,8 +28,16 @@ export class MembershipComponent implements OnInit {
 
   get members(){
     let memberships = this.membershipService.getAllMembership();
-    this.column = memberships.length;
+    if(memberships){
+      this.column = memberships.length;
+    }
     return memberships;
+  }
+
+  get featured(){
+    let featured = this.membershipService.getFeatureMembership();
+    console.log(featured);
+    return featured;
   }
 
 }

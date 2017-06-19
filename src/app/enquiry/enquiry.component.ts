@@ -16,6 +16,8 @@ export class EnquiryComponent implements OnInit {
   image;
   mainForm: FormGroup;
   mailForm: FormGroup;
+  maincomplete = false;
+  mailcomplete = false;
 
 
   constructor(private http: Http) {
@@ -59,7 +61,8 @@ export class EnquiryComponent implements OnInit {
         JSON.stringify({ email: form.email, name: form.name, comment: form.comment }),{headers: headers})
       .subscribe( ret_data => {
         console.log(ret_data);
-        form.clear()
+        this.maincomplete = true;
+        this.mainForm.reset();
       }, error => {
         console.log(error.json());
       });
@@ -75,8 +78,10 @@ export class EnquiryComponent implements OnInit {
       .post(environment.API_ENDPOINT+'newsletter',
         JSON.stringify({ email: form.email, name: form.name }),{headers: headers})
       .subscribe( ret_data => {
-        console.log(ret_data)
-        form.clear()
+        console.log(ret_data);
+        this.mailcomplete = true;
+        this.mailForm.reset();
+        form.reset();
       }, error => {
         console.log(error.json());
       });

@@ -8,7 +8,7 @@ import {environment} from '../environment';
   styleUrls: ['./mainimage.component.scss']
 })
 export class MainimageComponent implements OnInit {
-  defaultImage = 'https://www.placecage.com/1000/1000';
+  defaultImage = 'http://127.0.0.1:8000/media/media/images/IMG_8442.JPG';
   offset = 100;
 
   @Input()

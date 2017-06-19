@@ -13,6 +13,7 @@
         Please fill in the form below or send us an email and we shall get back in contact with you shortly.</p>
 
         <div>
+          <p *ngIf="maincomplete">Thank you for sending us a message, we shall be in touch shortly.</p>
           <form [formGroup]="mainForm" (ngSubmit)="mainsend(mainForm.value)" class="formhalf">
             <div class="input-field">
               <input id="message_email" type="email" class="validate" name="email" [formControl]="mainForm.controls['email']" required>
@@ -57,7 +58,7 @@
         <div class="card session-card">
           <form class="card-content" [formGroup]="mailForm" (ngSubmit)="mailsend(mailForm.value)">
             <span class="card-title">Subscribe to the Mailing list</span>
-
+            <p *ngIf="mailcomplete">Thank you for signing up, you should receive a email shortly.</p>
             <div class="input-field">
               <input id="sub_email" type="email" class="validate" name="email" [formControl]="mailForm.controls['email']" required>
               <label for="sub_email">Email</label>
